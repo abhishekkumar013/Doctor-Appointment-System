@@ -9,7 +9,7 @@ import { showLoading, hideLoading } from '../redux/features/alertSlice'
 const Register = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  //form handler
+  //form handler->get value from form
   const onfinishHandler = async (values) => {
     try {
       dispatch(showLoading())
@@ -31,12 +31,15 @@ const Register = () => {
   return (
     <>
       <div className="form-container ">
+        {/* Antd design form */}
         <Form
           layout="vertical"
           onFinish={onfinishHandler}
           className="register-form"
         >
           <h3 className="text-center">Register From</h3>
+          {/* form.item coming from antd */}
+          {/* these "name" value same as database/model deisgn name */}
           <Form.Item label="Name" name="name">
             <Input type="text" required />
           </Form.Item>
