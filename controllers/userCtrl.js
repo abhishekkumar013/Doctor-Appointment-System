@@ -224,13 +224,14 @@ const bookingAvailbilityController = async (req, res) => {
     })
     if (appointments.length > 0) {
       return res.status(200).send({
-        success: true,
-        message: 'Appointment Available',
+        success: false,
+         message: 'Appointment Not Available at this time'
       })
     } else {
       return res.status(200).send({
-        success: false,
-        message: 'Appointment Not Available at this time',
+        success: true,
+        message: 'Appointment Available',
+       
       })
     }
   } catch (error) {

@@ -82,6 +82,7 @@ const BookingPage = () => {
         },
       )
       dispatch(hideLoading())
+      console.log(res.data)
       if (res.data.success) {
         setIsAvailibale(true)
         message.success(res.data.message)
